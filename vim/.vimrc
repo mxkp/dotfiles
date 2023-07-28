@@ -12,6 +12,7 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 
 call plug#begin('~/.vim/plugged')
   Plug 'morhetz/gruvbox'
+  Plug 'ConradIrwin/vim-bracketed-paste'
 call plug#end()
 
 let g:gruvbox_contrast_light = 'hard'
@@ -55,7 +56,9 @@ set t_Co=256                                " Support for xterm with 256 colors
 set ruler                                   " Show ruler
 set noswapfile                              " Don't create annoying *.swp files
 
-set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣"
-autocmd FileType yaml,yml setlocal ts=2 sts=2 sw=2 expandtab
+set list
+set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:·
+
+" autocmd FileType yaml,yml setlocal ts=2 sts=2 sw=2 expandtab list
 
 set backspace=indent,eol,start
